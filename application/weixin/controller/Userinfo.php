@@ -19,7 +19,7 @@ class Userinfo
 
     public function userinfo()
     {
-        $userinfo  =$_SESSION['userinfo'];
+        $userinfo  =Session::get('userinfo');
         if(isset($userinfo)){
             return $userinfo;
         }else{
