@@ -32,8 +32,8 @@ class Userinfo extends  Controller
 
     //获取微信code
     public function get_code(){
-        var_dump($_SERVER['https']);
-        if($_SERVER['https']=='off'){
+        var_dump($_SERVER['HTTPS']);
+        if($_SERVER['HTTPS']=='off'){
 
         }
         $redirect  ='http'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'].'&response_type=code&scope=SCOPE&state=STATE#wechat_redirect';
