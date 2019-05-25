@@ -26,7 +26,7 @@
      //关闭URL请求
     curl_close($curl);
      //显示获得的数据
-     $data =json_decode($data);
+     $data =json_decode($data,true);
      return $data;
  }
 
@@ -76,7 +76,7 @@ function curl_post($data,$url){
      //关闭URL请求
      curl_close($curl);
      //显示获得的数据
-    $data =json_decode($data);
+    $data =json_decode($data,true);
     return $data;
 }
 
