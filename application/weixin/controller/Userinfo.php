@@ -7,7 +7,7 @@ class Userinfo extends  Controller
 {
     private $appid ='';
     private $secret='' ;
-    private $request ='';
+    protected $request ='';
 
 
     public function _initialize(){
