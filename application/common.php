@@ -50,6 +50,13 @@ function curl_https($url){
     return $data;
 }
 
+//file_get_content   抓取链接信息
+function http_content($url){
+     $data =file_get_contents($url);
+    $data =json_decode($data,true);
+    return $data;
+}
+
 
 //curl post 方式
 function curl_post($data,$url){
