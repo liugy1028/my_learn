@@ -3,10 +3,11 @@ namespace app\weixin\controller;
 use think\Controller ;
 use think\Session;
 use think\Request;
-class Userinfo
+class Userinfo extends  Controller
 {
-    private $appid ;
-    private $secret ;
+    private $appid ='';
+    private $secret='' ;
+    private $request ='';
 
 
     public function _initialize(){
