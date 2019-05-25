@@ -9,8 +9,8 @@ class Userinfo extends  Controller
     private $secret='' ;
     public function _initialize(){
         Session::init();
-        $appid = config('appid');
-        $secret= config('secret');
+        $this->appid = config('appid');
+        $this->secret= config('secret');
     }
 
 
@@ -32,9 +32,8 @@ class Userinfo extends  Controller
 
 
     public function get_code(){
-        var_dump($appid);
         $redirect  =$_SERVER['REQUEST_URI'].'&response_type=code&scope=SCOPE&state=STATE#wechat_redirect';
-        $url       ='https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$appid.'&redirect_uri='.$redirect;
+        $url       ='https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$this->appid.'&redirect_uri='.$redirect;
         $code      =curl_get($url);
         var_dump($code);die;
     }
