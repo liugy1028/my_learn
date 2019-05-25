@@ -31,7 +31,7 @@ class Userinfo extends  Controller
                 if($this->is_no){
                     $openid =$access_token['openid'];
                     Session::set('openid',$openid);
-                    return ['openid'=>$openid];
+                    return $openid;
                 }else{
                     $data       =$this->get_userInfo($access_token['access_token'],$access_token['openid']);
                     $headimgurl =$data['headimgurl'];
