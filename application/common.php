@@ -13,7 +13,7 @@
 
 
 //curl get方式
-public function curl_get($url){
+ function curl_get($url){
     $curl = curl_init();
          //设置抓取的url
     curl_setopt($curl, CURLOPT_URL, $url);
@@ -32,7 +32,7 @@ public function curl_get($url){
 
 
 //curl post 方式
-public function curl_post($data,$url){
+ function curl_post($data,$url){
     $curl = curl_init();
     //设置抓取的url
       curl_setopt($curl, CURLOPT_URL, $url);
