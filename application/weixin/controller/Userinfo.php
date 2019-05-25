@@ -34,7 +34,7 @@ class Userinfo extends  Controller
     public function get_code(){
         $redirect  =$_SERVER['REQUEST_URI'].'&response_type=code&scope=SCOPE&state=STATE#wechat_redirect';
         $url       ='https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$this->appid.'&redirect_uri='.$redirect;
-        $code      =curl_get($url);
+        $code      =curl_https($url);
         var_dump($code);die;
     }
 }
