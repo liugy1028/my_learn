@@ -15,7 +15,6 @@ class Userinfo extends  Controller
         $request =Request::instance();
         $appid = config('appid');
         $secret= config('secret');
-        var_dump($appid);die;
     }
 
     public function userinfo()
@@ -36,7 +35,10 @@ class Userinfo extends  Controller
 
 
     public function get_code(){
-        $redirect  =$_SERVER['REQUEST_URI'];
+        $redirect  =$_SERVER['REQUEST_URI'].'&response_type=code&scope=SCOPE&state=STATE#wechat_redirect';
         $appid     =$this->appid;
+        $url       ='https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$appid.'redirect_uri='.$redirect;
+        $code      =curl_get($url);
+        var_dump($code);die;
     }
 }
