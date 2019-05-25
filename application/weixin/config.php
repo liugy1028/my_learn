@@ -19,6 +19,9 @@ return [
     // 微信公众号secret
     'secret'                 =>'3912d164ec394a6d6c0dd2bd61d51cf7',
 
+    //是否静默授权(true 表示是，false表示不是)
+    'is_no'                  =>true,
+
     // 应用调试模式
     'app_debug'              => true,
     // 应用Trace

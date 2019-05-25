@@ -6,11 +6,14 @@ use think\Request;
 class Userinfo extends  Controller
 {
     private $appid ='';
-    private $secret='' ;
+    private $secret='';
+    private $is_no ='';
     public function _initialize(){
         Session::init();
         $this->appid = config('appid');
         $this->secret= config('secret');
+        $this->is_no = config('is_no');
+
     }
 
     //获取用户信息
@@ -32,7 +35,12 @@ class Userinfo extends  Controller
 
     //获取微信code
     public function get_code(){
-        $redirect  ='http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'].'&response_type=code&scope=SCOPE&state=STATE#wechat_redirect';
+        if($this->is_no){
+            $snope ='snsapi_base';
+        }else{
+            $snope ='snsapi_userinfo';
+        }
+        $redirect  ='http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'].'&response_type=code&scope='.$snope.'&state=STATE#wechat_redirect';
         $url       ='https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$this->appid.'&redirect_uri='.$redirect;
         var_dump($url);
         $code      =http_content($url);
