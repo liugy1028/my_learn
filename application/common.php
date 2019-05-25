@@ -26,7 +26,6 @@
      //关闭URL请求
     curl_close($curl);
      //显示获得的数据
-     var_dump($data);
      $data =json_decode($data);
      return $data;
  }
