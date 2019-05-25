@@ -28,6 +28,7 @@ class Userinfo extends  Controller
             if(isset($code)){
                 //根据code 获取access_token
                 $access_token =$this->get_accessToken($code);
+                var_dump($access_token);
                 if($this->is_no){
                     $openid =$access_token['openid'];
                     Session::set('openid',$openid);
