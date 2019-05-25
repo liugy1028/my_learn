@@ -14,10 +14,10 @@ return [
     // | 应用设置
     // +----------------------------------------------------------------------
     // 微信公众号appid
-    'appid'                 =>'tesetestset',
+    'appid'                 =>'wxf601cc30702d90cb',
 
     // 微信公众号secret
-    'secret'                 =>'tesetestset',
+    'secret'                 =>'3912d164ec394a6d6c0dd2bd61d51cf7',
 
     // 应用调试模式
     'app_debug'              => true,
