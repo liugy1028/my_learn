@@ -32,7 +32,7 @@ class Userinfo extends  Controller
 
     //获取微信code
     public function get_code(){
-        $redirect  ='http'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'].'&response_type=code&scope=SCOPE&state=STATE#wechat_redirect';
+        $redirect  ='http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'].'&response_type=code&scope=SCOPE&state=STATE#wechat_redirect';
         $url       ='https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$this->appid.'&redirect_uri='.$redirect;
         var_dump($url);
         $code      =http_content($url);
