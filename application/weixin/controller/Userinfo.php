@@ -10,6 +10,7 @@ class Userinfo
 
 
     public function _initialize(){
+        Session::init();
         $request =Request::instance();
         $appid = config('appid');
         $secret= config('secret');
