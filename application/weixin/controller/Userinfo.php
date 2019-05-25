@@ -31,8 +31,7 @@ class Userinfo
 
 
     public function get_code(){
-        https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&redirect_uri=REDIRECT_URI&response_type=code&scope=SCOPE&state=STATE#wechat_redirect
         $redirect  =$_SERVER['REQUEST_URI'];
-        $appid     =
+        $appid     =$this->appid;
     }
 }
