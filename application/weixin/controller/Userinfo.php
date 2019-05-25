@@ -7,15 +7,14 @@ class Userinfo extends  Controller
 {
     private $appid ='';
     private $secret='' ;
-    protected $request ='';
-
-
+    private $Request='' ;
     public function _initialize(){
         Session::init();
-        $request =Request::instance();
         $appid = config('appid');
         $secret= config('secret');
+        $Request =Request::instance();
     }
+
 
     public function userinfo()
     {
@@ -23,7 +22,7 @@ class Userinfo extends  Controller
         if(isset($userinfo)){
             return $userinfo;
         }else{
-            $code  =$request->param('code');
+            $code  =$Request->param('code');
             //判断是否拿到code ，如拿到就去拿取用户信息
             if(isset($code)){
 
