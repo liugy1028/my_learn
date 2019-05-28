@@ -17,7 +17,7 @@ class Userinfo extends  Controller
     }
 
     //获取用户信息
-    public function usernfo()
+    public function userinfo()
     {
          echo redis();
         $userinfo  =Session::get('userinfo');
