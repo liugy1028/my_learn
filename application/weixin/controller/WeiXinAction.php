@@ -7,7 +7,7 @@ use think\Request;
 use think\Session;
 use Redis;
 
-class WeixinAction
+class WeiXinAction
 {
     private  $appid;
     private  $secret;
