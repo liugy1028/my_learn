@@ -4,11 +4,18 @@ namespace app\weixin\controller;
 use think\Controller;
 use think\Config;
 use think\Exception;
+use think\Request;
 
 class Jssdk extends  Controller
 {
-    private $appid =config('appid');
-    private $secert =config('secret');
+    private $appid ;
+    private $secert ;
+
+    public function _initialize()
+    {
+        $this->appid =\config('appid');
+        $this->secert=\config('secret');
+    }
 
 
     //获取jssdk_ticket
