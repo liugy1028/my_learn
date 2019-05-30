@@ -5,7 +5,7 @@ use think\Controller;
 use think\Exception;
 use think\Request;
 use think\Session;
-use app\Redis;
+
 
 class Weixinaction
 {
@@ -15,7 +15,7 @@ class Weixinaction
     public function _initialize(){
         $this->appid  =config('appid');
         $this->secret =config('secret');
-        $this->redis  =new \Redis();
+        $this->redis  =new Redis();
     }
 
 

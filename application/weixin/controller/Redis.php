@@ -1,5 +1,5 @@
 <?php
-namespace app;
+namespace app\weixin\controller;
 
 use think\Exception;
 use think\Controller;
