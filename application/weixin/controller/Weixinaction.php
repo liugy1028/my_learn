@@ -2,12 +2,13 @@
 namespace app\weixin\controller;
 
 use think\Controller;
+use think\Config;
 use think\Exception;
 use think\Request;
 use think\Session;
 
 
-class Weixinaction
+class Weixinaction extends Controller
 {
     private  $appid;
     private  $secret;
