@@ -66,7 +66,7 @@ class Jssdk extends  Controller
             'noncestr' =>$nonceStr,
             'url'      =>'http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'],
             'timestamp'=>$timestamp,
-            'jssdk_ticket' =>$jssdk_ticket
+            'jsapi_ticket' =>$jssdk_ticket
         );
         ksort($arr);
         $str ='';
