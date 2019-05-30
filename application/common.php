@@ -46,6 +46,7 @@ function curl_https($url){
     //关闭URL请求
     curl_close($curl);
     //显示获得的数据
+    var_dump($data);die;
     $data =json_decode($data,true);
     return $data;
 }
