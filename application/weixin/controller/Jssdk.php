@@ -54,4 +54,31 @@ class Jssdk extends  Controller
         }
         return $str1;
     }
+
+
+
+    //分享需要的四个参数
+    public function  share_Param(){
+        $nonceStr     =$this->nonceStr();
+        $jssdk_ticket =$this->jssdk_Ticket();
+        $timestamp    =time();
+        $arr          =array(
+            'noncestr' =>$nonceStr,
+            'url'      =>$_SERVER['REQUEST_URI'],
+            'timestamp'=>$timestamp,
+            'jssdk_ticket' =>$jssdk_ticket
+        );
+        ksort($arr);
+        $str ='';
+        foreach($arr as $k=>$v){
+            $str.=$k.'='.$v.'&';
+        }
+        $str = substr($str,0,-1);
+        $signature =sha1($str);
+        $arr['signature'] =$signature;
+        return $arr ;
+    }
+
+
+    
 }
