@@ -19,7 +19,7 @@ class Weixinaction extends Controller
 
     }
 
-
+    //获取 access_token
     public function get_AccessToken(){
         $this->Redis  =new Redis();
         $access =$this->Redis->get('access_token_'.$this->appid);
