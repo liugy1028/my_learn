@@ -18,14 +18,14 @@ class Redis  extends  Controller
     //@name  设置的字符串名
     //@value 设置的值
     public function set($name,$value){
-        $this->redis->set($name,$value);
+        return $this->redis->set($name,$value);
     }
 
 
     //设置字符串 生效时间
     //$time (int)
     public function setEx($name,$value,$time){
-        $this->redis->setex($name,$time,$value);
+        return $this->redis->setex($name,$time,$value);
     }
 
 
