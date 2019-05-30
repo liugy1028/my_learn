@@ -15,11 +15,12 @@ class Weixinaction
     public function _initialize(){
         $this->appid  =config('appid');
         $this->secret =config('secret');
-        $this->Redis  =new Redis();
+
     }
 
 
     public function get_AccessToken(){
+        $this->Redis  =new Redis();
         $access =$this->Redis->get('access_token_'.$this->appid);
         if(!$access){
             $url ='https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.$this->appid.'&secret='.$this->secret;
