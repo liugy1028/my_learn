@@ -29,7 +29,7 @@ class Weixinaction extends Controller
             var_dump($data);
             if($data['access_token']){
                 $this->Redis->setEx('access_token_'.$this->appid,'7200',$data['access_token']);
-                return ['access_token'=>$data['access_token']];
+                return json(['access_token'=>$data['access_token']]);
             }else{
                 throw new Exception('获取access_token失败'.$data);
             }
