@@ -24,7 +24,7 @@ class Redis  extends  Controller
 
     //设置字符串 生效时间
     //$time (int)
-    public function setEx($name,$value,$time){
+    public function setEx($name,$time,$value){
         return $this->redis->setex($name,$time,$value);
     }
 
