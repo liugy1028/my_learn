@@ -5,7 +5,7 @@ use think\Controller;
 use think\Exception;
 use think\Request;
 use think\Session;
-use Redis;
+use app\Redis;
 
 class Weixinaction
 {
