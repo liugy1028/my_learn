@@ -74,7 +74,6 @@ class Jssdk extends  Controller
             $str.=$k.'='.$v.'&';
         }
         $str = substr($str,0,-1);
-        echo $str;
         $signature =sha1($str);
         $arr['signature'] =$signature;
         return $arr ;
