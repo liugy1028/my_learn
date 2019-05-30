@@ -64,7 +64,7 @@ class Jssdk extends  Controller
         $timestamp    =time();
         $arr          =array(
             'noncestr' =>$nonceStr,
-            'url'      =>$_SERVER['REQUEST_URI'],
+            'url'      =>$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'],
             'timestamp'=>$timestamp,
             'jssdk_ticket' =>$jssdk_ticket
         );
@@ -80,5 +80,5 @@ class Jssdk extends  Controller
     }
 
 
-    
+
 }
