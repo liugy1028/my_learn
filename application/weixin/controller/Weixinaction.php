@@ -26,6 +26,7 @@ class Weixinaction extends Controller
         if(!$access){
             $url ='https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.$this->appid.'&secret='.$this->secret;
             $data=curl_https($url);
+            var_dump($data);
             if($data['access_token']){
                 $this->Redis->setEx('access_token_'.$this->appid,'7200',$data['access_token']);
                 return ['access_token'=>$data['access_token']];
